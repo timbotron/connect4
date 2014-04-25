@@ -11,16 +11,55 @@ $(document).ready(function() {
 
 		drop_token($player,$x);
 
-		// Then we crunch the data to array and see if player won
 		var $won = 0;
+		// Then we crunch the data to array and see if player won
+		$won = did_they_win($player);
 		// if player didnt win, update .players-turn
 		if($won==0)
 		{
 			switch_player($player);
 		}
+		else
+		{
+			// GAME OVER
+			$("button.dropper").attr('disabled','disabled');
+		}
 
 	})
 });
+
+function did_they_win($player)
+{
+	for($y=0;$y<6;$y++)
+	{
+		for($x=0;$x<7;$x++)
+		{
+			console.log('checking x:'+$x+' y:'+$y);
+
+			// first lets check for simple horizontal
+			if(($x+3)<7)
+			{
+				// then worth it to continue
+				if($player == slot_reader($x,$y))
+				{
+					if($player == slot_reader($x+1,$y))
+					{
+						if($player == slot_reader($x+2,$y))
+						{
+							if($player == slot_reader($x+3,$y))
+							{
+								//WINNER
+								return 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return 0;
+}
 
 function switch_player($current_player)
 {
