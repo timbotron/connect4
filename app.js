@@ -25,11 +25,11 @@ $(document).ready(function() {
 			$("button.dropper").attr('disabled','disabled');
 			if($player==1)
 			{
-				$('.winners-circle').html('; Red Player Wins!');
+				$('.winners-circle').html('<h3><span class="label label-info">Red Player Wins!</span></h3>');
 			}
 			else
 			{
-				$('.winners-circle').html('; Yellow Player Wins!');
+				$('.winners-circle').html('<h3><span class="label label-info">Yellow Player Wins!</span></h3>');
 			}
 		}
 
