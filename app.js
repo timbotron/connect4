@@ -25,11 +25,11 @@ $(document).ready(function() {
 			$("button.dropper").attr('disabled','disabled');
 			if($player==1)
 			{
-				$('.winners-circle').html('<h2>Red Player Wins!</h2>');
+				$('.winners-circle').html('; Red Player Wins!');
 			}
 			else
 			{
-				$('.winners-circle').html('<h2>Yellow Player Wins!</h2>');
+				$('.winners-circle').html('; Yellow Player Wins!');
 			}
 		}
 
@@ -38,6 +38,7 @@ $(document).ready(function() {
 	$('.reset-game').click(function()
 	{
 		$('button').removeAttr('disabled').attr('class','btn btn-default');
+		$(this).attr('class','btn btn-success');
 		switch_player(2);
 		$('.winners-circle').html('');
 
@@ -172,12 +173,12 @@ function switch_player($current_player)
 	if($current_player==1)
 	{
 		$('.players-turn').attr('data-player','2');
-		$('.players-turn').removeClass('label-danger').addClass('label-warning').html('YELLOW PLAYERS TURN');
+		$('.players-turn').removeClass('label-danger').addClass('label-warning').html('YELLOW PLAYER TURN');
 	}
 	else
 	{
 		$('.players-turn').attr('data-player','1');
-		$('.players-turn').removeClass('label-warning').addClass('label-danger').html('RED PLAYERS TURN');
+		$('.players-turn').removeClass('label-warning').addClass('label-danger').html('RED PLAYER TURN');
 	}
 }
 
