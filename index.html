@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Connect 4</title>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <style type="text/css">
+        .board {margin: 20px 0 0 0;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-2">
+                    <h2>Connect 4</h2>
+                    <p>Drop your chip into your desired column by clicking on the columns button. Good luck.</p>
+                    <span class="winners-circle"></span>
+                    <h3><span class="players-turn label label-danger" data-player="1">RED PLAYER TURN</span></h3><button type="button" class="btn btn-success reset-game">Reset Game</button><br /><br />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-offset-2">
+                    <button type="button" data-x="0" class="dropper btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" data-x="1" class="dropper btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" data-x="2" class="dropper btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" data-x="3" class="dropper btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" data-x="4" class="dropper btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" data-x="5" class="dropper btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" data-x="6" class="dropper btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+            </div>
+            <div class="row board">
+                <div class="col-xs-1 col-sm-offset-2">
+                    <button data-x="0" data-y="5" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="1" data-y="5" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="2" data-y="5" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="3" data-y="5" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="4" data-y="5" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="5" data-y="5" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="6" data-y="5" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+            </div>
+             <div class="row board">
+                <div class="col-xs-1 col-sm-offset-2">
+                    <button data-x="0" data-y="4" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="1" data-y="4" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="2" data-y="4" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="3" data-y="4" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="4" data-y="4" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="5" data-y="4" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="6" data-y="4" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+            </div>
+             <div class="row board">
+                <div class="col-xs-1 col-sm-offset-2">
+                    <button data-x="0" data-y="3" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="1" data-y="3" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="2" data-y="3" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="3" data-y="3" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="4" data-y="3" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="5" data-y="3" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="6" data-y="3" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+            </div>
+             <div class="row board">
+                <div class="col-xs-1 col-sm-offset-2">
+                    <button data-x="0" data-y="2" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="1" data-y="2" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="2" data-y="2" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="3" data-y="2" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="4" data-y="2" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="5" data-y="2" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="6" data-y="2" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+            </div>
+             <div class="row board">
+                <div class="col-xs-1 col-sm-offset-2">
+                    <button data-x="0" data-y="1" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="1" data-y="1" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="2" data-y="1" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="3" data-y="1" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="4" data-y="1" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="5" data-y="1" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="6" data-y="1" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+            </div>
+             <div class="row board">
+                <div class="col-xs-1 col-sm-offset-2">
+                    <button data-x="0" data-y="0" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="1" data-y="0" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="2" data-y="0" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="3" data-y="0" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="4" data-y="0" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="5" data-y="0" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+                <div class="col-xs-1">
+                    <button data-x="6" data-y="0" class="btn btn-default" disabled="disabled">&nbsp;</button>
+                </div>
+            </div>
+           
+        </div>
+    
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
