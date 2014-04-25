@@ -23,9 +23,25 @@ $(document).ready(function() {
 		{
 			// GAME OVER
 			$("button.dropper").attr('disabled','disabled');
+			if($player==1)
+			{
+				$('.winners-circle').html('<h2>Red Player Wins!</h2>');
+			}
+			else
+			{
+				$('.winners-circle').html('<h2>Yellow Player Wins!</h2>');
+			}
 		}
 
-	})
+	});
+
+	$('.reset-game').click(function()
+	{
+		$('button').removeAttr('disabled').attr('class','btn btn-default');
+		switch_player(2);
+		$('.winners-circle').html('');
+
+	});
 });
 
 function did_they_win($player)
@@ -55,6 +71,75 @@ function did_they_win($player)
 						}
 					}
 				}
+			}
+
+			// Now lets check for simple vertical
+			if(($y+3)<6)
+			{
+				// then worth it to continue
+				if($player == $grid[$x][$y])
+				{
+					if($player == $grid[$x][$y+1])
+					{
+						if($player == $grid[$x][$y+2])
+						{
+							if($player == $grid[$x][$y+3])
+							{
+								//WINNER
+								return 1;
+							}
+						}
+
+					}
+				}
+			}
+
+			// Now lets check for 45 degree win
+			if((($y+3)<6) && (($x+3)<7))
+			{
+				// then worth it to continue
+				if($player == $grid[$x][$y])
+				{
+					if($player == $grid[$x+1][$y+1])
+					{
+						if($player == $grid[$x+2][$y+2])
+						{
+							if($player == $grid[$x+3][$y+3])
+							{
+								//WINNER
+								return 1;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			// Now lets check for 135 degree win
+			if((($y+3)<6) && (($x-3)>=0))
+			{
+				// then worth it to continue
+				if($player == $grid[$x][$y])
+				{
+					if($player == $grid[$x-1][$y+1])
+					{
+						if($player == $grid[$x-2][$y+2])
+						{
+							if($player == $grid[$x-3][$y+3])
+							{
+								//WINNER
+								return 1;
+							}
+
+						}
+
+					}
+
+				}
+
 			}
 
 
