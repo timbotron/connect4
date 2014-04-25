@@ -30,6 +30,7 @@ $(document).ready(function() {
 
 function did_they_win($player)
 {
+	var $grid = grid_me();
 	for($y=0;$y<6;$y++)
 	{
 		for($x=0;$x<7;$x++)
@@ -40,13 +41,13 @@ function did_they_win($player)
 			if(($x+3)<7)
 			{
 				// then worth it to continue
-				if($player == slot_reader($x,$y))
+				if($player == $grid[$x][$y])
 				{
-					if($player == slot_reader($x+1,$y))
+					if($player == $grid[$x+1][$y])
 					{
-						if($player == slot_reader($x+2,$y))
+						if($player == $grid[$x+2][$y])
 						{
-							if($player == slot_reader($x+3,$y))
+							if($player == $grid[$x+3][$y])
 							{
 								//WINNER
 								return 1;
@@ -55,10 +56,30 @@ function did_they_win($player)
 					}
 				}
 			}
+
+
 		}
 	}
 
 	return 0;
+}
+
+// Read the entire board into an array. will make checking win conditions much faster
+function grid_me()
+{
+	var $ret = new Array(7);
+	for($i=0;$i<$ret.length;$i++)
+	{
+		$ret[$i] = new Array(6);
+	}
+	for($y=0;$y<6;$y++)
+	{
+		for($x=0;$x<7;$x++)
+		{
+			$ret[$x][$y] = slot_reader($x,$y);
+		}
+	}
+	return $ret;
 }
 
 function switch_player($current_player)
