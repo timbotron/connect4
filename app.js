@@ -47,12 +47,13 @@ $(document).ready(function() {
 
 function did_they_win($player)
 {
+	// lets test against an array so we don't hit the DOM 100+ times.
 	var $grid = grid_me();
 	for($y=0;$y<6;$y++)
 	{
 		for($x=0;$x<7;$x++)
 		{
-			console.log('checking x:'+$x+' y:'+$y);
+			//console.log('checking x:'+$x+' y:'+$y);
 
 			// first lets check for simple horizontal
 			if(($x+3)<7)
